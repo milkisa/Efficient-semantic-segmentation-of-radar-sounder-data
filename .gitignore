@@ -1,0 +1,16 @@
+*.mat
+*.csv
+*.h5
+*.npz
+*.pth
+*.pt
+test_data/
+result_monthly.png
+__pycache__/
+*.log
+*.out
+*.pyc
+.env
+venv/
+dataset
+saved_models
