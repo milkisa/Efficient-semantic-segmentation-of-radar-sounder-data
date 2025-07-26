@@ -28,12 +28,11 @@ Radar sounders are used to map the subsurface of glaciers and planetary bodies. 
 ## 📁 Repository Structure
 
 ```
-├── runu2net_test.py                  # Inference on a single radargram without partitioning
+├── run_u2net_test.py                  # Inference on a single radargram without partitioning
 ├── run_partition_u2net_test.py      # K-fold cross-validation with configurable dataset/model/partition
 ├── model/
 │   └── model.py                      # U2NET and U2NETP architectures
-├── data_loader/
-│   └── data_loader.py               # Custom Dataset and Transform
+├── data_loader.py                    # Custom Dataset and Transform
 ├── implementation/
 │   ├── metrics.py                   # Metric computation (precision, recall, accuracy)
 │   ├── test.py                      # Per-fold inference logic
@@ -44,7 +43,6 @@ Radar sounders are used to map the subsurface of glaciers and planetary bodies. 
 ├── test_data/
 │   └── [results_dir/]               # Visualization of segmentation results
 ├── result_monthly.png               # Qualitative comparison of predictions
-├── Efficent_semantic_segmentation_of_radar_sounder_data.pdf
 └── README.md
 ```
 
@@ -58,6 +56,7 @@ Radar sounders are used to map the subsurface of glaciers and planetary bodies. 
 - torchvision
 - numpy, pandas, matplotlib
 - rasterio (if needed for your radargrams)
+- elasticdeform
 
 **Install dependencies:**
 ```bash
@@ -109,10 +108,10 @@ The following figure shows a visual comparison of segmentation outputs on radarg
 
 - **Column 1**: Original radargram  
 - **Column 2**: Ground truth label  
-- **Columns 3–6**: Predicted masks from different test folds
+- **Columns 3–6**: proposed method, resunet++, unet
 
 <p align="center">
-  <img src="result_monthly.png" alt="Segmentation Results" width="750"/>
+  <img src="result.png" alt="Segmentation Results" width="750"/>
 </p>
 
 These results illustrate the model’s robustness and consistency across folds in identifying key subsurface structures such as **ice layers**, **bedrock**, and **noise**.
