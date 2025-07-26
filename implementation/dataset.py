@@ -49,10 +49,12 @@ def sharad_data_model():
 
 def mc10_data_model(partition_idx=0):
     import pandas as pd
+    import torch
     p=427
-    rs_image= pd.read_csv('dataset/data_mc10.csv', header = None).to_numpy().reshape(p,-1,64)
-    rs_label= pd.read_csv('dataset/gt_mc10.csv', header = None).to_numpy().reshape(p,-1,64)
-    
+    #rs_image= pd.read_csv('dataset/data_mc10.csv', header = None).to_numpy().reshape(p,-1,64)
+    #rs_label= pd.read_csv('dataset/gt_mc10.csv', header = None).to_numpy().reshape(p,-1,64)
+    rs_image=  torch.load('dataset/rs_data.pt',weights_only=False)
+    rs_label=  torch.load('dataset/rs_gt.pt', weights_only=False)
     kf = KFold(n_splits=3, shuffle=True, random_state=seed)
     
     

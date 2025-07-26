@@ -2,7 +2,7 @@ import numpy as np
 import torch
 import matplotlib.pyplot as plt
 import torch.nn.functional as F
-
+import os
 def save_output(s_inputs,pred,labels, num,fold):
 
 # print(s_inputs.shape)
@@ -26,6 +26,9 @@ def save_output(s_inputs,pred,labels, num,fold):
     label_rgb= color_mapping(label)
 
     label_rgb= label_rgb.astype(np.uint8)
+    output_dir= "test_data/folds/" + str(fold) + "/"
+    if not os.path.exists(output_dir):
+         os.makedirs(output_dir)
 
 
     name= "test_data/folds/"+str(fold)+ "/" + str(num) + '.png'
