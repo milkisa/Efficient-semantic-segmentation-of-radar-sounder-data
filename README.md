@@ -108,7 +108,7 @@ The following figure shows a visual comparison of segmentation outputs on radarg
 
 - **Column 1**: Original radargram  
 - **Column 2**: Ground truth label  
-- **Columns 3–6**: proposed method, resunet++, unet
+- **Columns 3–6**: proposed method (3 and 4), resunet++, unet
 
 <p align="center">
   <img src="result.png" alt="Segmentation Results" width="750"/>
